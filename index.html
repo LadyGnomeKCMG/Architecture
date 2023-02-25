@@ -1,1 +1,144 @@
-Hello World
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.header {
+  background-color: #2196F3;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+.footer {
+  background-color: #444;
+  color: white;
+  padding: 15px;
+}
+
+.topmenu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #777;
+}
+
+.topmenu li {
+  float: left;
+}
+
+.topmenu li a {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 16px;
+  text-decoration: none;
+}
+
+.topmenu li a:hover {
+  background-color: #222;
+}
+
+.topmenu li a.active {
+  color: white;
+  background-color: #4CAF50;
+}
+
+.column {
+  float: left;
+  padding: 15px;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.sidemenu {
+  width: 25%;
+}
+
+.content {
+  width: 75%;
+}
+
+.sidemenu ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidemenu li a {
+  margin-bottom: 4px;
+  display: block;
+  padding: 8px;
+  background-color: #eee;
+  text-decoration: none;
+  color: #666;
+}
+
+.sidemenu li a:hover {
+  background-color: #555;
+  color: white;
+}
+
+.sidemenu li a.active {
+  background-color: #008CBA;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<!--<ul class="topmenu">
+  <li><a href="#home" class="active">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
+</ul>-->
+
+<div class="clearfix">
+  <div class="column sidemenu">
+    <ul>
+      <li><a href="#flight" class="active" onclick="myFunction()">Home</a></li>
+      <li><a href="#city"  onclick="myFunction()">Books</a></li>
+      <li><a href="#island" onclick="myFunction()">Websites</a></li>
+      <li><a href="#food" onclick="myFunction()">Videos</a></li>
+      <li><a href="#people" onclick="myFunction()">Articles</a></li>
+      <li><a href="#history" onclick="myFunction()">Saved Pictures</a></li>
+      <li><a href="#oceans" onclick="myFunction()">Misc.</a></li>
+    </ul>
+  </div>
+
+  <div class="column content">
+    <div class="header">
+      <h1>My Architecture Page</h1>
+    </div>
+    </br>
+    <iframe style="width:100%; height:150vw; border: 0px solid white;" id="myFrame" src="https://ladygnomekcmg.github.io/Architecture/pages/home.html""></iframe>
+  </div>
+</div>
+
+<script>
+function myFunction() {
+  document.getElementById("myFrame").src = "https://ladygnomekcmg.github.io/Architecture/pages/home.html";
+}
+</script>
+
+<!--<div class="footer">
+  <p>Footer Text</p>
+</div>-->
+
+</body>
+</html>
+
+
