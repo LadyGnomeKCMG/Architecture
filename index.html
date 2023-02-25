@@ -2,143 +2,237 @@
 <html>
 <head>
 <style>
+
 * {
   box-sizing: border-box;
 }
 
 body {
-  margin: 0;
+  font-family: Arial;
+  padding: 10px;
+  background: #f1f1f1;
 }
 
+/* Header/Blog Title */
 .header {
-  background-color: #2196F3;
-  color: white;
+  padding: 90px;
   text-align: center;
-  padding: 15px;
+  background: white;
+  background-image: linear-gradient(rgba(255,255,255,.5), rgba(255,255,255,.5)), url("https://raw.githubusercontent.com/LadyGnomeKCMG/Architecture/main/images/St_Pancras.jpg");
+  background-size: cover;
 }
 
-.footer {
-  background-color: #444;
-  color: white;
-  padding: 15px;
+.header h1 {
+  font-size: 50px;
 }
 
-.topmenu {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+/* Style the top navigation bar */
+.topnav {
   overflow: hidden;
-  background-color: #777;
+  background-color: #333;
 }
 
-.topmenu li {
+/* Style the topnav links */
+.topnav a {
   float: left;
-}
-
-.topmenu li a {
-  display: inline-block;
-  color: white;
-  text-align: center;
-  padding: 16px;
-  text-decoration: none;
-}
-
-.topmenu li a:hover {
-  background-color: #222;
-}
-
-.topmenu li a.active {
-  color: white;
-  background-color: #4CAF50;
-}
-
-.column {
-  float: left;
-  padding: 15px;
-}
-
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.sidemenu {
-  width: 25%;
-}
-
-.content {
-  width: 75%;
-}
-
-.sidemenu ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.sidemenu li a {
-  margin-bottom: 4px;
   display: block;
-  padding: 8px;
-  background-color: #eee;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
-  color: #666;
 }
 
-.sidemenu li a:hover {
-  background-color: #555;
-  color: white;
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
 }
 
-.sidemenu li a.active {
-  background-color: #008CBA;
-  color: white;
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {   
+  float: left;
+  width: 60%;
+}
+
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 40%;
+  background-color: #f1f1f1;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Add a card effect for articles */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 5px;
+  text-align: center;
+  background: transparent;
+  margin-top: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .topnav a {
+    float: none;
+    width: 100%;
+  }
 }
 </style>
 </head>
 <body>
 
-<!--<ul class="topmenu">
-  <li><a href="#home" class="active">Home</a></li>
-  <li><a href="#news">News</a></li>
-  <li><a href="#contact">Contact</a></li>
-  <li><a href="#about">About</a></li>
-</ul>-->
+<div class="header">
+  <h1>My Achitectural Pinboard</h1>
+</div>
 
-<div class="clearfix">
-  <div class="column sidemenu">
-    <ul>
-      <li><a href="#flight" class="active" onclick="myFunction()">Home</a></li>
-      <li><a href="#city"  onclick="myFunction()">Books</a></li>
-      <li><a href="#island" onclick="myFunction()">Websites</a></li>
-      <li><a href="#food" onclick="myFunction()">Videos</a></li>
-      <li><a href="#people" onclick="myFunction()">Articles</a></li>
-      <li><a href="#history" onclick="myFunction()">Saved Pictures</a></li>
-      <li><a href="#oceans" onclick="myFunction()">Misc.</a></li>
-    </ul>
-  </div>
+<!--<div class="topnav">
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#">Link</a>
+  <a href="#" style="float:right">Link</a>
+</div>-->
 
-  <div class="column content">
-    <div class="header">
-      <h1>My Architecture Page</h1>
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2 style="font-size: 30px; padding: 0px; margin: 0px;">Books</h2>
+      <p style="padding: 0px; margin: 5px;"><i>From Cambridge University Department of Architecture</i> {<a href="https://www.arct.cam.ac.uk/system/files/documents/books-recommended-for-reading.pdf">Source</a>}</p>
+      <p><b>Most Important Books</b></p>
+        <input type="checkbox"> Bo Bardi, L., <i>Stones against Diamonds</i>, AA Publications, £12.79 </br>
+  <input type="checkbox" checked> Moore, R., <i>Why We Build</i>, Picador, £12.99 </br>
+  <input type="checkbox"> Pallasmaa, J., <i>The Eyes of the Skin</i>, Wiley, £27.47 </br>
+    <input type="checkbox"> Perec, G., <i>Species of Space and Other Pieces</i>, Penguin, £10.99 </br>
+  <input type="checkbox"> Rasmussen, S.E., <i>Experiencing Architecture</i>, MIT Press, £15.62 </br>
+  <input type="checkbox"> Till, J., <i>Architecture Depends</i>, MIT Press, £11.78 </br>
+      <p><b>Fiction</b></p>
+        <input type="checkbox"> Calvino, I., <i>Invisible Cities</i>, Vintage Classics, £3.85 </br>
+  <input type="checkbox"> Schultz, B., <i>Streets of Crocodiles and Other Stories</i>, Penguin, £8.70 </br>
+  <input type="checkbox"> Sebald, W.G., <i>Austerlitz</i>, Penguin, £6.99 </br>
+  <input type="checkbox"> Achebe, C., <i>Things Fall Apart</i>, Penguin, £6.99 </br>
+  <input type="checkbox"> Ali. M., <i>Brick Lane</i>, Black Swan, £7.37 </br>
+  <input type="checkbox"> Ngozi Adiche, C., <i>Half of a Yellow Sun</i>, £7.99 </br>
+
     </div>
-    </br>
-    <iframe style="width:100%; height:150vw; border: 0px solid white;" id="myFrame" src="https://ladygnomekcmg.github.io/Architecture/pages/home.html""></iframe>
+    <div class="card">
+      <h2 style="font-size: 30px; padding: 0px; margin: 0px;">Museums and Similar</h2>
+      </br>
+<a href="https://www.soane.org">Sir John Soane's Museum &#x2192;</a>
+</br></br>
+
+</div>
+
+ <!--   <div class="card">
+      <h2 style="font-size: 30px; padding: 0px; margin: 0px;">Images</h2>
+      </br>
+<img src="https://cdn.britannica.com/25/139425-138-050505D0/consideration-London-Houses-of-Parliament.jpg" style="float:left; ">
+</br></br>
+
+</div>-->
+
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2 style="font-size: 30px; padding: 0px; margin: 0px;">Architectural Websites</h2>
+      </br>
+<a href="https://www.theguardian.com/artanddesign/architecture">The Guardian Architectural Section &#x2192;</a>
+</br></br>
+<a href="https://www.theguardian.com/uk/environment">The Guardian Environmental Section &#x2192;</a>
+</br></br>
+<a href="https://www.dezeen.com/">Dezeen &#x2192;</a>
+</br></br>
+<a href="https://www.archdaily.com/">ArchDaily &#x2192;</a>
+</br></br>
+<a href="https://www.urbanista.org/">urbanista.org &#x2192;</a>
+</br></br>
+<a href="https://ellenmacarthurfoundation.org/">Ellen MacArthur Foundation &#x2192;</a>
+</br></br>
+<a href="https://www.bbc.co.uk/news/topics/cwlw3xz044gt">BBC News - Architecture &#x2192;</a>
+</br></br>
+<a href="https://www.ft.com/architecture">Financial Times - Architecture &#x2192;</a>
+
+    </div>
+    
+        <div class="card">
+      <h3 style="font-size: 30px; padding: 0px; margin: 0px;">Other Websites</h3>
+      </br>
+<a href="http://www.kere-architecture.com">Kere Architecture Practice (see building with clay) &#x2192;</a>
+</br></br>
+
+</div>
+
+    
+    <div class="card">
+      <h3 style="font-size: 30px; padding: 0px; margin: 0px;">Videos</h3>
+      </br>
+<a href="https://www.ted.com/talks/theo_jansen_my_creations_a_new_form_of_life?language=en">Theo Jansen’s beach creatures &#x2192;</a>
+</br></br>
+<a href="https://www.youtube.com/watch?v=NAdUo95ZmGo&vl=en">Traditional Japanese Woodworking Techniques &#x2192;</a>
+</br></br>
+<a href="https://www.youtube.com/watch?v=MD23gIlr52Y">Building with Clay &#x2192;</a>
+</br></br>
+<a href="https://www.youtube.com/watch?v=jax5qG8qCx0">Urban Conflict and Civic Space &#x2192;</a>
+</br></br>
+
+</div>
+    <div class="card">
+      <h3 style="font-size: 30px; padding: 0px; margin: 0px;">Podcasts</h3>
+      </br>
+<a href="https://www.bbc.co.uk/programmes/p04grdbc/episodes/downloads">BBC - People Fixing The World &#x2192;</a>
+</br></br>
+
+</div>
+
+    <div class="card">
+      <h3 style="font-size: 30px; padding: 0px; margin: 0px;">Articles</h3>
+      </br>
+<a href="https://scielo.conicyt.cl/scielo.php?script=sci_arttext&pid=S0717-
+69962017000100074&lng=en&nrm=iso&tlng=en">Building a house in Argentina &#x2192;</a>
+</br></br>
+<a href="https://www.archdaily.com/476/poli-house-pezo-von-ellrichshausen">Description of a Chilean House by its architects &#x2192;</a>
+</br></br>
+<a href="https://linabobarditogether.com/2012/08/03/the-making-of-sesc-pompeia-by-marcelo-ferraz/">The Making of SESC Pompéia &#x2192;</a>
+</br></br>
+<a href="https://www.ft.com/content/8b78bbac-b04e-11e3-8058-00144feab7de">Article on the work of Anupama Kundoo &#x2192;</a>
+</br></br>
+
+</div>
+
+
   </div>
 </div>
 
-<script>
-function myFunction() {
-  document.getElementById("myFrame").src = "https://ladygnomekcmg.github.io/Architecture/pages/home.html";
-}
-</script>
-
-<!--<div class="footer">
-  <p>Footer Text</p>
-</div>-->
+<div class="footer">
+  <h2></h2>
+</div>
 
 </body>
 </html>
-
-
